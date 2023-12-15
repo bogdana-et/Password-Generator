@@ -91,6 +91,8 @@ var upperCasedCharacters = [
 const charOptions = [];
 //Can be empty string or empty array
 const generatedPassword = "";
+//You can store the generatedPassword as a string and concat each character OR
+//as an array and push each character, then join once you have enough characters
 
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -114,10 +116,14 @@ function getPasswordOptions() {
 function getRandom(arr) {
   // Need a variable to hold the password as it's being generated
   //Need  avariable to hold the index that's being generated
+
+  //For loop that loops the number of times that matches the length the user chose
   //Generate a random number
   //That number is the index for a character in the mega-array
   //So then, mega-array[generated-index] is the actual character
   //Add that character to the password
+
+  //Once we finish the for loop, return the generated password
 }
 
 // Function to generate password with user input
