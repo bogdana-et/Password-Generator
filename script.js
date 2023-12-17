@@ -89,7 +89,6 @@ var upperCasedCharacters = [
 ];
 
 const charOptions = [];
-//Can be empty string or empty array
 const generatedPassword = "";
 //You can store the generatedPassword as a string and concat each character OR
 //as an array and push each character, then join once you have enough characters
@@ -97,6 +96,13 @@ const generatedPassword = "";
 // Function to prompt user for password options
 function getPasswordOptions() {
    // Prompt for password length
+   var passwordLength = prompt("Please enter your password length.")
+
+   passwordLength = parseInt(passwordLength)
+   console.log(passwordLength)
+   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
+    alert("Wrong length!");
+   }
   //At least 8 characters, no more than 128
   //Conditional to check that the number that was entered is in range
   //Prompts store data as strings, s oneed to parse into a number
@@ -132,6 +138,7 @@ function generatePassword() {
   // Present a series of prompts for password criteria
     // Length of password
       // At least 8 characters but no more than 128.
+      getPasswordOptions();
     // Character types
       // Lowercase
       // Uppercase
