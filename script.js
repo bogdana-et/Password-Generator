@@ -96,20 +96,30 @@ const generatedPassword = "";
 // Function to prompt user for password options
 function getPasswordOptions() {
    // Prompt for password length
-   var passwordLength = prompt("Please enter your password length.")
-
-   passwordLength = parseInt(passwordLength)
-   console.log(passwordLength)
-   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
-    alert("Wrong length!");
-   }
-  //At least 8 characters, no more than 128
+     //At least 8 characters, no more than 128
   //Conditional to check that the number that was entered is in range
   //Prompts store data as strings, s oneed to parse into a number
   //If the user's input is out of range, either return out of the function or call the function again
 
+   var passwordLength = prompt("Please enter your password length.")
+
+   passwordLength = parseInt(passwordLength)
+   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
+    alert("Wrong length!");
+    return
+   }
+
   //Confirm which character sets to use
   //If the user answers false for all, either return out of the function or call the function again
+  var isLowercase = confirm("Do you want lowercase characters?");
+  var isUppercase = confirm("Do you want  uppercase characters?");
+  var isNumber = confirm("Do you want a number?");
+  var isSymbol = confirm("Do you want a symbol?");
+
+  if (!isLowercase && !isUppercase && !isNumber && !isSymbol) {
+    alert("Please choose at least one type of characters!");
+    return
+  }
  //Generate a random character for each selected character set
   //Either push selected character sets to a mega-array of all selected characters
   //OR you can keep the arrays separate and generate a random number to select the array and another to select the index
